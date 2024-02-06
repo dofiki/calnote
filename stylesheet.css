@@ -22,13 +22,6 @@ body{
     align-items: center;
 }
 
-.noteSection{
-    background-color: rgb(42, 42, 42);
-    height: 100vh;
-    
-    
-}
-
 .calendar{
     width:55rem;
     height:28rem;
@@ -37,6 +30,11 @@ body{
     grid-template-rows: repeat(4,1fr);
     justify-content: center;
 
+}
+
+.dates{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
 }
 
 .date{
@@ -54,20 +52,14 @@ body{
     background-color: rgb(36, 36, 36);
 }
 
-
-.f7, .s7, .t7, .fo7, .l4{
-    display: flex;
-    
-}
-
-.daysContainer{
+.days{
     display: grid;
     grid-template-columns: repeat(7,1fr);
     text-align: center;
     color: white;
 }
 
-.days{
+.day{
     outline: 1px solid rgb(255, 255, 255);
     display: flex;
     align-items: center;
@@ -76,7 +68,9 @@ body{
     background-color: black;
 }
 
-.noteSection{
+.notes{
+    background-color: rgb(42, 42, 42);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,7 +78,7 @@ body{
 
 .note{
     background-color: rgb(185, 185, 185);
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
     margin-top: 8rem;
     width: 22rem;
@@ -93,11 +87,50 @@ body{
     border-radius: 1rem;
 }
 
-.note:focus{
-    outline: none;
-    background-color: white;
+.active{
+    display: grid;
 }
 
-.active{
-    display: flex;
+.note:focus{
+    background-color: rgb(236, 236, 236);
 }
+
+.note:hover{
+    background-color: rgb(236, 236, 236);
+}
+
+
+.noteContent{
+    padding: 0.2rem;
+    text-align: left;
+    height: 6rem;
+    max-width: 21.2rem; 
+    text-overflow: ellipsis;
+    overflow-y:scroll;
+    
+}
+
+.noteContent:focus{
+    background-color: rgb(236, 236, 236);
+    outline: 1px black solid;
+}
+
+
+.noteMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor:default
+}
+
+.noteMenu img{
+    height: 20px;
+    cursor: pointer;
+}
+
+
